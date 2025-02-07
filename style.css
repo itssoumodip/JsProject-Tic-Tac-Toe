@@ -7,7 +7,7 @@
     color: white;
 }
 main {
-    background-color: black;
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ main {
     cursor: pointer;
     border-radius: 12px;
     /* border: solid 4px rgb(144, 2, 130); */
-    /* opacity: 0.5; */
+    opacity: 0.5;
     transition: 0.3s;
 }
 #header .playerActive {
@@ -54,4 +54,35 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 70px);
     grid-template-rows: repeat(3, 70px);
+    gap: 12px;
+}
+#board .cell {
+    /* border: solid; */
+    background-color: rgb(85 85 85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s background;
+    border-radius: 12px;
+}
+#board .cell:hover {
+    background-color: #3b3b3bbc;
+}
+#restartBtn {
+    margin-top: 30px;
+    width: 235px;
+    background-color: #3a4452;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s background;
+}
+#restartBtn:hover {
+    background-color: rgba(0, 0, 0, 0.599);
 }
