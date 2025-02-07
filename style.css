@@ -14,3 +14,11 @@ main {
     align-items: center;
     justify-content: center;
 }
+header {
+    border: solid;
+    display: flex;
+    width: 235px;
+    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
