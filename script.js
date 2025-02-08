@@ -51,33 +51,32 @@ cells.forEach((cell, index) => {
 
 function handleClick (cell, index) {
     // console.log(index)
-    if (playerChoice == 'alone')
+    if (playerChoice == 'multi')
     {
         if (cell.textContent === "" && !gamePaused) {
             // console.log(index)
             gameStart = true;
-            updateCell(cell, index);
+            updateCell(cell, index); 
             if (!checkWinner()) {
                 switchPlayer();
-
             }
-        }
+        } 
     }  
     else {
         if (cell.textContent === "" && !gamePaused) {
-            // console.log(index)
             gameStart = true;
-            updateCell(cell, index);
+            updateCell(cell, index); 
+            computerMove();
             if (!checkWinner()) {
                 switchPlayer();
-            }
+            } 
         }
     }
 }
 
 function updateCell (cell, index) {
 
-    // console.log(currentPlayer)
+    console.log(cell)
     cell.textContent = currentPlayer; 
     gameBoard[index] = currentPlayer;
     cell.style.color = currentPlayer ==='X' ? '#00e1ff' : '#ff0000';
@@ -85,10 +84,6 @@ function updateCell (cell, index) {
 
 function switchPlayer () {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-}
-
-function withSomeone() {
-    // console.log("wi")
 }
 
 function checkWinner() { 
@@ -117,7 +112,10 @@ function declareWinner (winningIndexes) {
     restartBtn.style.visibility = 'visible'; 
 }
 function declareDraw () {
- 
+    winnerMsg.textContent = `IT'S A DRAW !!`;
+    winnerMsg.style.display = "block";
+    gamePaused = true;
+    restartBtn.style.visibility = 'visible';
 }  
 
 restartBtn.addEventListener("click", () => {
@@ -134,3 +132,18 @@ restartBtn.addEventListener("click", () => {
     gamePaused = false;
     gameStart = false;
 })
+
+function computerMove () {
+    gamePaused = true;
+    setTimeout ( () => {
+        let randomIndex;
+        do {
+            randomIndex = Math.floor (Math.random() * gameBoard.length);
+        } while (gameBoard[randomIndex]!=='')
+        updateCell(cells[randomIndex], randomIndex);
+        if (!checkWinner()) {
+            switchPlayer(); 
+            gamePaused = false; 
+        }
+    }, 1000)
+}
