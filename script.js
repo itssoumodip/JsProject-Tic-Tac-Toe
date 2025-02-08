@@ -7,7 +7,8 @@ const multiUser = document.getElementById('multi');
 const board = document.getElementById('board');
 const restratBtn = document.querySelector('#restratBtn');
 const cells = document.querySelectorAll('.cell');
-
+const winnerMsg = document.getElementById('declareWinner');
+const userPlayingChoice = document.querySelector('.choice');
 // console.log(cells)
 
 let gameStart = false;
@@ -23,7 +24,7 @@ const winnigConditions = [
 
 header.style.display = "none";
 board.style.display = "none";
-restartBtn.style.display = "none"; 
+restartBtn.style.visibility = 'hidden'; 
 
 function userChoice (choice) {
     playerChoice = choice;
@@ -49,21 +50,34 @@ cells.forEach((cell, index) => {
 });
 
 function handleClick (cell, index) {
-    console.log(index)
-    if (cell.textContent === "" && !gamePaused) {
-        // console.log(index)
-        gameStart = true;
-        updateCell(cell, index);
-        if (!checkWinner()) {
-            switchPlayer();
+    // console.log(index)
+    if (playerChoice == 'alone')
+    {
+        if (cell.textContent === "" && !gamePaused) {
+            // console.log(index)
+            gameStart = true;
+            updateCell(cell, index);
+            if (!checkWinner()) {
+                switchPlayer();
 
+            }
+        }
+    }  
+    else {
+        if (cell.textContent === "" && !gamePaused) {
+            // console.log(index)
+            gameStart = true;
+            updateCell(cell, index);
+            if (!checkWinner()) {
+                switchPlayer();
+            }
         }
     }
 }
 
 function updateCell (cell, index) {
 
-    console.log(currentPlayer)
+    // console.log(currentPlayer)
     cell.textContent = currentPlayer; 
     gameBoard[index] = currentPlayer;
     cell.style.color = currentPlayer ==='X' ? '#00e1ff' : '#ff0000';
@@ -95,11 +109,28 @@ function checkWinner() {
 }
 
 function declareWinner (winningIndexes) {
-    console.log("his")
+    winnerMsg.textContent = `${currentPlayer} WINS !!`
+    winnerMsg.style.display = "block";
+    // console.log("his") 
     gamePaused = true;
     winningIndexes.forEach(index => cells[index].style.background = "#edff8e");
-    restartBtn.style.display = "block";
+    restartBtn.style.visibility = 'visible'; 
 }
 function declareDraw () {
+ 
+}  
 
-}
+restartBtn.addEventListener("click", () => {
+    restartBtn.style.visibility = 'hidden'; 
+    board.style.display = 'none';
+    winnerMsg.style.display = 'none';
+    userPlayingChoice.style.display = "inline"
+
+    gameBoard.fill('');
+    cells.forEach(cell => {
+        cell.textContent = '';
+        cell.style.background = '';
+    });
+    gamePaused = false;
+    gameStart = false;
+})

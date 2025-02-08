@@ -122,3 +122,10 @@ main {
 .choice .activeChoice {
     background-color: #4e5c6f;
 }
+#declareWinner {
+    padding: 12px;
+    font-weight: 700;
+    font-size: 49px;
+    color: #edff8e;
+    display: none;
+}

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
 </head>
+
 <body>
     <main>
+        <div id="declareWinner">
+        </div>
         <div class="choice">
-            <p>WANNA PLAY ?</p> 
+            <p>WANNA PLAY ?</p>
             <button id="alone" onclick="userChoice('alone')">Alone : )</button>
             <button id="multi" onclick="userChoice('multi')">With Someone</button>
         </div>
@@ -24,18 +29,19 @@
             </div>
         </header>
         <div id="board">
-             <div id="0" class="cell"></div>
-             <div id="1" class="cell"></div>
-             <div id="2" class="cell"></div>
-             <div id="3" class="cell"></div>
-             <div id="4" class="cell"></div>
-             <div id="5" class="cell"></div>
-             <div id="6" class="cell"></div>
-             <div id="7" class="cell"></div>
-             <div id="8" class="cell"></div> 
+            <div id="0" class="cell"></div>
+            <div id="1" class="cell"></div>
+            <div id="2" class="cell"></div>
+            <div id="3" class="cell"></div>
+            <div id="4" class="cell"></div>
+            <div id="5" class="cell"></div>
+            <div id="6" class="cell"></div>
+            <div id="7" class="cell"></div>
+            <div id="8" class="cell"></div>
         </div>
         <button id="restartBtn" onclick="restartGame()">Restrat</button>
     </main>
 </body>
-    <script src="script.js"></script>
+<script src="script.js"></script>
+
 </html>
