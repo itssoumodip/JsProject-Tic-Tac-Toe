@@ -4,9 +4,11 @@ const oplayer = document.querySelector('#oplayer');
 const xplayer = document.querySelector('#xplayer');
 const titleHeader = document.querySelector('#titleHeader');
 
+let currentPlayer = 'X'; 
 function handleClick(e) {
-    const id = el.id;
-    console.log(e);
+    const id = Number(e.id);
+    array[id] = currentPlayer;
+    console.log(array);
 }
 
 // console.log(cells)

@@ -34,7 +34,7 @@ main {
     font-weight: bold;
     cursor: pointer;
     border-radius: 12px;
-    border: solid 4px rgb(255, 255, 255);
+    border: solid 4px rgba(255, 255, 255, 0.288);
     opacity: 0.5;
     transition: 0.3s;
 }
