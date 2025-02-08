@@ -14,7 +14,7 @@ let gameStart = false;
 let gamePaused = false;
 let playerChoice = null;
 let currentPlayer = null;
-const gameBoard = ['', '', '', '', '', '', '', '', ''];
+let gameBoard = Array(9).fill('');
 const winnigConditions = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8], 
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -41,7 +41,7 @@ function selectPlayer(player) {
     // console.log(currentPlayer)
     document.getElementById('header').style.display = "none";
     board.style.display = "grid";  
-    restartBtn.style.display = "block"; 
+    // restartBtn.style.display = "block"; 
 }
 
 cells.forEach((cell, index) => {
@@ -49,15 +49,20 @@ cells.forEach((cell, index) => {
 });
 
 function handleClick (cell, index) {
+    console.log(index)
     if (cell.textContent === "" && !gamePaused) {
         // console.log(index)
         gameStart = true;
         updateCell(cell, index);
-        // if ()
+        if (!checkWinner()) {
+            switchPlayer();
+
+        }
     }
 }
 
 function updateCell (cell, index) {
+
     console.log(currentPlayer)
     cell.textContent = currentPlayer; 
     gameBoard[index] = currentPlayer;
@@ -72,11 +77,14 @@ function withSomeone() {
     // console.log("wi")
 }
 
-function checkWinner() {
+function checkWinner() { 
     for(const [a, b, c] of winnigConditions) {
-        if (gameBoard[a] === currentPlayer && gameBoard[b] === currentPlayer && gameBoard[c] === currentPlayer) {
-             declareWinner([a, b, c]);
-             return true;
+        // console.log(a, b, c)
+        // console.log(currentPlayer)
+        // console.log(gameBoard)
+        if (gameBoard[a] == currentPlayer && gameBoard[b] == currentPlayer && gameBoard[c] == currentPlayer) {
+            declareWinner([a, b, c]);
+            return true;
         }
     }
     if (gameBoard.every(cell => cell!='')) {
@@ -87,6 +95,11 @@ function checkWinner() {
 }
 
 function declareWinner (winningIndexes) {
+    console.log("his")
     gamePaused = true;
-    
+    winningIndexes.forEach(index => cells[index].style.background = "#edff8e");
+    restartBtn.style.display = "block";
+}
+function declareDraw () {
+
 }
