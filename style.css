@@ -37,7 +37,7 @@ main {
     cursor: pointer;
     border-radius: 12px;
     border: solid 4px rgba(255, 255, 255, 0.288);
-    opacity: 0.4;
+    /* opacity: 0.4; */
     transition: 0.3s;
 }
 #header .playerActive {

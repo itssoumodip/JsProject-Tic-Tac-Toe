@@ -22,3 +22,10 @@ function userChoice (choice) {
         
     console.log(playerChoice);
 } 
+xplayer.addEventListener("click", () => selectPlayer('X'));
+oplayer.addEventListener("click", () => selectPlayer('O'));
+function selectPlayer(player) {
+    document.getElementById('header').style.display = "none";
+    board.style.display = "grid";  
+    restartBtn.style.display = "block"; 
+} 
