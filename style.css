@@ -87,3 +87,25 @@ main {
 #restartBtn:hover {
     background-color: #565555bc;
 }
+.choice {
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+    padding: 0px 23px 23px 23px;
+    font-size: 23px;
+}
+.choice p{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.choice button{
+    font-weight: 400;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 6px 10px;
+    background-color: #393f48;
+    border: none;
+    border-radius: 12px;
+}
