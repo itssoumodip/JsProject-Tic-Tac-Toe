@@ -11,8 +11,8 @@
     <main>
         <div class="choice">
             <p>WANNA PLAY ?</p> 
-            <button onclick="userChoice">With Someone</button>
-            <button onclick="userChoice">Alone : )</button>
+            <button class="activeChoice" id="alone" onclick="userChoice('alone')">Alone : )</button>
+            <button id="multi" onclick="userChoice('withSomeone')">With Someone</button>
         </div>
         <header id="header">
             <div class="player playerActive" id="xplayer" onclick="choosePlayer('X')">
@@ -24,17 +24,18 @@
             </div>
         </header>
         <div id="board">
-             <div onclick="handleClick(this)" id="0" class="cell">0</div>
-             <div onclick="handleClick(this)" id="1" class="cell">1</div>
-             <div onclick="handleClick(this)" id="2" class="cell">2</div>
-             <div onclick="handleClick(this)" id="3" class="cell">3</div>
-             <div onclick="handleClick(this)" id="4" class="cell">4</div>
-             <div onclick="handleClick(this)" id="5" class="cell">5</div>
-             <div onclick="handleClick(this)" id="6" class="cell">6</div>
-             <div onclick="handleClick(this)" id="7" class="cell">7</div>
-             <div onclick="handleClick(this)" id="8" class="cell">8</div> 
+             <div onclick="handleClick(this)" id="0" class="cell"></div>
+             <div onclick="handleClick(this)" id="1" class="cell"></div>
+             <div onclick="handleClick(this)" id="2" class="cell"></div>
+             <div onclick="handleClick(this)" id="3" class="cell"></div>
+             <div onclick="handleClick(this)" id="4" class="cell"></div>
+             <div onclick="handleClick(this)" id="4" class="cell"></div>
+             <div onclick="handleClick(this)" id="5" class="cell"></div>
+             <div onclick="handleClick(this)" id="6" class="cell"></div>
+             <div onclick="handleClick(this)" id="7" class="cell"></div>
+             <div onclick="handleClick(this)" id="8" class="cell"></div> 
         </div>
-        <button id="restartBtn">Restrat</button>
+        <button id="restartBtn" onclick="restartGame()">Restrat</button>
     </main>
 </body>
     <script src="script.js"></script>

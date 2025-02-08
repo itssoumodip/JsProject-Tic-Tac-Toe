@@ -34,3 +34,6 @@ function choosePlayer(playerSelect) {
         oplayer.classList.add('playerActive');
     }
 }
+function userChoice (choice) {
+    
+}
