@@ -5,9 +5,27 @@ const xplayer = document.querySelector('#xplayer');
 const titleHeader = document.querySelector('#titleHeader');
 
 let currentPlayer = 'X'; 
+
+function checkWinner() {
+    // if (
+    //     (array[0] == array[1] && array[1] == [2]) || 
+    //     (array[3] == array[4] && array[4] == [5]) || 
+    //     (array[6] == array[7] && array[7] == [8]) || 
+    //     (array[0] == array[3] && array[3] == [6]) || 
+    //     (array[1] == array[4] && array[4] == [7]) || 
+    //     (array[2] == array[5] && array[5] == [8]) || 
+    //     (array[0] == array[4] && array[4] == [8]) || 
+    //     (array[2] == array[4] && array[4] == [6]) || 
+    // )
+    
+}
+
 function handleClick(e) {
     const id = Number(e.id);
     array[id] = currentPlayer;
+    e.innerText = currentPlayer;
+    checkWinner();
+    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     console.log(array);
 }
 
