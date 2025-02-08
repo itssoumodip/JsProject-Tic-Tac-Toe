@@ -54,7 +54,7 @@ function choosePlayer(playerSelect) {
     }
 }
 */
-// const cells = document.querySelectorAll('.cell');
+
 const oplayer = document.querySelector('#oplayer');
 const xplayer = document.querySelector('#xplayer');
 const headerContainer = document.getElementById('header');
